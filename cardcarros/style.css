@@ -1,0 +1,500 @@
+/* Estilos globais e da barra de pesquisa */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: rgb(27, 27, 27);
+    /* Removido as propriedades de flexbox do body que centralizavam o slider,
+       para que outros elementos possam ser posicionados normalmente. */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* width: 100%; */
+    /* height: 100vh; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* barra-pesquisa */
+.barra-pesquisa {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+    margin-bottom: 30px; /* Adicionado um espaço abaixo da barra de pesquisa */
+}
+
+.barra-pesquisa input {
+    padding: 10px;
+    width: 500px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.barra-pesquisa button {
+    padding: 10px 15px;
+    background-color: rgb(235, 162, 94);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.barra-pesquisa button:hover {
+    background-color:rgb(124, 236, 60) ;
+}
+
+/* --- INICIO ESTILOS DO CARROSSEL --- */
+.slider {
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto; /* Centraliza o carrossel na página */
+    margin-bottom: 50px; /* Adiciona um espaço abaixo do carrossel */
+}
+
+.slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    position: relative;
+    width: 25%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 800px;
+    height: 400px;
+}
+
+/* Navegação Manual */
+.navegacao-manual {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid#ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background: #04ee3f;
+}
+
+/* Navegação Automática */
+.navegacao-auto {
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 360px;
+}
+
+.navegacao-auto div {
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navegacao-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+/* Quando seleciona o radio, muda a cor do botão */
+#radio1:checked ~ .navegacao-auto .auto-btn1 {
+    background: #f7f7f7;
+}
+#radio1:checked ~ .navegacao-auto .auto-btn2 {
+    background: #f7f7f7;
+}
+#radio1:checked ~ .navegacao-auto .auto-btn3 {
+    background: #f7f7f7;
+}
+#radio1:checked ~ .navegacao-auto .auto-btn4 {
+    background: #f7f7f7;
+}
+
+/* Movendo slides */
+#radio1:checked ~ .primeiro {
+    margin-left: 0;
+}
+#radio2:checked ~ .primeiro {
+    margin-left: -25%;
+}
+#radio3:checked ~ .primeiro {
+    margin-left: -50%;
+}
+#radio4:checked ~ .primeiro {
+    margin-left: -75%;
+}
+/* --- FIM ESTILOS DO CARROSSEL --- */
+
+/*footer*/
+.footer {
+    background-color: rgb(235, 162, 94);
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* carro grande da home (nova div para envolver a imagem)*/
+.main-car-image-container {
+    text-align: center; /* Centraliza a imagem dentro da div */
+    margin: 20px auto; /* Adiciona margem e centraliza o container */
+}
+
+#imagem-carro {
+    max-width: 100%; /* Garante que a imagem não saia do container */
+    width: 800px; /* Largura preferencial */
+    height: auto; /* Mantém a proporção */
+    border-radius: 10px; /* Se quiser bordas arredondadas na imagem grande */
+    display: block; /* Para permitir margin: auto para centralização dentro do container */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+.inicio {
+    background: rgb(235, 162, 94); /* cor de fundo escura */
+    color: rgb(0, 0, 0); /* cor do texto */
+    text-align: center; /* centraliza o texto */
+    text-transform: uppercase; /* letras maiúsculas */
+    font-size: 16px; /* tamanho geral da fonte */
+    width: 400px; /* largura do card */
+    padding: 20px; /* espaço interno */
+    /* margin: 50px; /* Removido para usar gap do container pai */
+    border-radius: 15px; /* bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* sombra leve */
+}
+
+.inicio .descricao {
+    text-transform: none; /* deixa esse texto em letras normais */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.inicio p {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+
+.inicio .descricao {
+    font-size: 20px;
+}
+
+.inicio:hover {
+    background-color: rgb(124, 236, 60);
+    border-radius: 10px; /* arredonda quando passa o mouse */
+}
+
+/* CONTAINER GERAL DOS CARDS MAIORES DE CATEGORIA */
+.cards-container-geral {
+    display: flex;
+    justify-content: center; /* Centraliza os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+    gap: 20px; /* Espaço entre os cards */
+    margin: 50px 0; /* Espaço acima e abaixo do container */
+}
+
+.inicio.esportivo,
+.inicio.picape,
+.inicio.suv,
+.inicio.sedan,
+.inicio.luxo,
+.inicio.eletricos {
+    background: rgb(235, 162, 94); /* cor padrão para estas categorias */
+}
+
+.inicio.esportivo:hover,
+.inicio.picape:hover,
+.inicio.suv:hover,
+.inicio.sedan:hover,
+.inicio.luxo:hover,
+.inicio.eletricos:hover {
+    background-color: rgb(124, 236, 60); /* muda a cor no hover */
+    transition: all 0.3s ease; /* suaviza a transição */
+}
+
+h1 {
+    color: aliceblue; /* cor texto inicial */
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+h3 {
+    color: aliceblue;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.lista-anos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 50px; /* Adiciona espaço abaixo da lista de anos */
+}
+
+/* card ano */
+.ano {
+    background: rgb(235, 162, 94); 
+    padding: 50px 15px;
+    border-radius: 8px;
+    width: 180px;
+    box-shadow: 2px 2px 8px rgb(255, 255, 255);
+}
+
+.ano:hover {
+    background:rgb(124, 236, 60);
+}
+
+.ano h3 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #000000;
+}
+
+ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 6px;
+    color: #000000; /* Garante que o texto da lista seja preto */
+}
+
+.preco {
+    color: #000000;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.container {
+    display:flex;
+    justify-content: center; /* alinha os itens no centro */
+    flex-wrap: wrap; /* Adicionado para que os cards quebrem a linha */
+    margin-top: 50px; /* Adiciona espaço acima dos cards de carro */
+    margin-bottom: 50px; /* Adiciona espaço abaixo dos cards de carro */
+}
+
+.card {
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: rgb(235, 162, 94); 
+    width: 270px; /* tamanho das divs LARGURA */
+    padding: 15px;
+    margin: 15px; /* espaço das divs */
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgb(255, 255, 255);
+}
+
+.card-image {
+    height: 150px; /* tamanho das divs ALTURA */
+    margin-bottom: 15px; 
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.car-1 {
+    background: url('carro1.png') no-repeat center center;
+    background-size: cover;
+}
+
+.car-2 {
+    background: url('carro4.webp') no-repeat center center;
+    background-size: cover;
+}
+
+.car-3 {
+    background: url('carro3.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card h2 {
+    padding: 10px;
+}
+
+.card p {
+    padding: 10px;
+    text-transform: none; /* Garante que o texto da descrição não seja uppercase */
+}
+
+.card a {
+    padding: 15px 20px; 
+    display: block;
+    text-align: center; /* alinha o texto no centro */
+    margin: 20px 50px;
+}
+
+.card:hover {
+    background: rgb(124, 236, 60);
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgb(255, 255, 255);
+}
+
+.button {
+    background: rgb(255, 255, 255);
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+/* quando vc arrasta o mouse no botão, ele passa a ficar branco(cor atual) */
+.card:hover .button {
+    background: white;
+    color: black; /* muda a cor do texto para continuar visível */
+    border:none; /* opcional: adicionar uma borda visível */
+}
+
+.botoes-categorias {
+    text-align: center; /* Centraliza o h1 "categorias" */
+    margin: 30px 0; /* Espaçamento da seção */
+}
+
+.botoes-wrapper { /* Container APENAS para os botões */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Espaço entre o h1 "categorias" e os botões */
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 0; /* Controlado pelo 'gap' do .botoes-wrapper */
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Categorias com cores diferentes */
+.categoria1, .categoria2, .categoria3, .categoria4, .categoria5, .categoria6, .categoria7 {
+    background-color: rgb(235, 162, 94);
+    box-shadow: 2px 2px 8px rgb(255, 255, 255);
+}
+
+.btn:hover {
+    background-color:rgb(124, 236, 60) ;
+}
+
+/* ESTILOS DOS PRODUTOS PARA CARROS (Cera, Shampoo, Pneu, etc.) */
+.produtos-geral {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 920px; /* Para caber 3 cards por linha */
+    margin: 50px auto;
+}
+
+.produto-card {
+    width: 280px; /* Não estica mais */
+}
+.produto-card {
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0; /* Removido margin para usar gap no container pai */
+    text-align: center;
+    box-shadow: 2px 2px 8px rgb(255, 255, 255);
+    background-color:rgb(235, 162, 94); /* Fundo branco para o card inteiro */
+    width: 280px; /* Largura do card de produto */
+    display: flex; /* Transforma o card em flex container */
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: space-between; /* Espaça os itens verticalmente */
+    height: auto; /* Altura flexível para o conteúdo */
+}
+
+.produto-card:hover {
+  background:rgb(124, 236, 60) ;
+}
+
+.produto-imagem-wrapper { /* Novo wrapper para a imagem do produto */
+    width: 100%;
+    height: 180px; /* Altura fixa para a área da imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* Espaço abaixo da imagem */
+    overflow: hidden; /* Garante que a imagem não "escape" */
+    border-radius: 8px; /* Arredonda as bordas do wrapper da imagem */
+}
+
+.produto-card img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o wrapper */
+    max-height: 100%; /* Garante que a imagem não ultrapasse o wrapper */
+    display: block; /* Para permitir centralização */
+    object-fit: contain; /* Redimensiona a imagem para caber sem cortar */
+    border-radius: 8px; /* Arredonda as bordas da imagem em si */
+    margin: 0 auto; /* Centraliza a imagem dentro do wrapper */
+}
+
+/* Ajustes para texto e botões dentro do produto-card */
+.produto-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #000000;
+    min-height: 40px; /* Para manter alinhamento se os títulos forem de tamanhos diferentes */
+}
+
+.produto-card p {
+    font-size: 0.9em;
+    color: #000000;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que a descrição ocupe o espaço disponível */
+    min-height: 60px; /* Para manter alinhamento se as descrições forem de tamanhos diferentes */
+}
+
+.produto-card .preco {
+    font-size: 1.4em;
+    color: #000000; /* Cor azul para o preço */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.produto-card .adicionar-carrinho {
+    background-color: rgb(27, 27, 27);/* Cor verde para o botão */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Botão ocupa a largura total do card */
+}
